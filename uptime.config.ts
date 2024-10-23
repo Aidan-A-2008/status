@@ -78,6 +78,7 @@ const workerConfig = {
     // if not specified, notification will be sent immediately
     //gracePeriod: 5,
   },
+  ],
   callbacks: {
     onStatusChange: async (
       env: any,
