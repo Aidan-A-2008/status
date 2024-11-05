@@ -35,7 +35,7 @@ const workerConfig = {
     },
     {
       id: 'support',
-      name: 'Support Site', // Added new monitor for status site
+      name: 'Support', // Added new monitor for status site
       method: 'GET',
       target: 'https://support.aidanarredondo.com',
       expectedCodes: [200],
