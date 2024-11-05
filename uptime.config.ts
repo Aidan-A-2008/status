@@ -4,11 +4,12 @@ const pageConfig = {
     { link: 'https://www.aidanarredondo.com/', label: 'Website' },
     { link: 'https://photos.aidanarredondo.com/', label: 'Photography' },
     { link: 'https://aidana.link', label: 'Links' },
+    { link: 'https://support.aidanarredondo.com/', label: 'Status' }, // Added new link
   ],
 }
 
 const workerConfig = {
-  kvWriteCooldownMinutes: 3,
+  kvWriteCooldownMinutes: 1, // Reduced refresh time per check
   monitors: [
     {
       id: 'website',
@@ -26,6 +27,17 @@ const workerConfig = {
       name: 'Photography',
       method: 'GET',
       target: 'https://photos.aidanarredondo.com',
+      expectedCodes: [200],
+      timeout: 10000,
+      headers: {
+        'User-Agent': 'Uptimeflare',
+      },
+    },
+    {
+      id: 'support',
+      name: 'Support Site', // Added new monitor for status site
+      method: 'GET',
+      target: 'https://support.aidanarredondo.com',
       expectedCodes: [200],
       timeout: 10000,
       headers: {
