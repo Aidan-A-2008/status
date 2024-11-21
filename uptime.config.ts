@@ -34,17 +34,6 @@ const workerConfig = {
       },
     },
     {
-      id: 'storage',
-      name: 'Storage', // Added new monitor for status site
-      method: 'GET',
-      target: 'https://storage.aidanarredondo.com',
-      expectedCodes: [200],
-      timeout: 10000,
-      headers: {
-        'User-Agent': 'Uptimeflare',
-      },
-    },
-    {
       id: 'support',
       name: 'Support', // Added new monitor for status site
       method: 'GET',
