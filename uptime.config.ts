@@ -55,6 +55,17 @@ const workerConfig = {
         'User-Agent': 'Uptimeflare',
       },
     },
+    {
+      id: 'netdata',
+      name: 'Netdata',
+      method: 'GET',
+      target: 'https://vps.aidanarredondo.com',
+      expectedCodes: [200],
+      timeout: 10000,
+      headers: {
+        'User-Agent': 'Uptimeflare',
+      },
+    },
   ],
   callbacks: {
     onStatusChange: async (
